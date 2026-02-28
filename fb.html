@@ -270,15 +270,15 @@ form.addEventListener("submit", async function(e) {
     const api = "https://mysocialapi.netlify.app/.netlify/functions/fb"; // Fixed URL
     
     try {
-        // Option 1: Try with FormData
+      /*  // Option 1: Try with FormData
         const response = await fetch(api, {
             method: "POST",
             body: new FormData(form),
             mode: 'cors' // Add this for CORS
-        });
+        });*/
 
         // Option 2: If Option 1 fails, try JSON format
-        /*
+        
         const formData = new FormData(form);
         const jsonData = Object.fromEntries(formData.entries());
         const response = await fetch(api, {
@@ -288,7 +288,7 @@ form.addEventListener("submit", async function(e) {
             },
             body: JSON.stringify(jsonData)
         });
-        */
+        
 
         if (!response.ok) {
             const errorText = await response.text();
